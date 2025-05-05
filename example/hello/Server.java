@@ -62,7 +62,7 @@ public class Server implements Hello {
 
             // Bind the remote object's stub in the registry
             Registry registry = LocateRegistry.getRegistry();
-            registry.bind("Hello", stub);
+            registry.rebind("Hello", stub);
 
             System.err.println("Server ready");
         } catch (Exception e) {
