@@ -11,7 +11,7 @@ public class Client {
 
         System.out.println("Initiating client");
 
-        String host = (args.length < 1) ? "localhost" : args[0];
+       String host = (args.length < 1) ? null : args[0];
         try {
             Registry registry = LocateRegistry.getRegistry(host);
             System.out.println("Registry has been located");
