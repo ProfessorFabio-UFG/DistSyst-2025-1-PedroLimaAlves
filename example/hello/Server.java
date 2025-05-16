@@ -9,22 +9,18 @@ public class Server implements Hello {
 
     public Server() {}
 
-    @Override
     public String sayHello() {
         return "Hello, world!";
     }
 
-    @Override
     public int soma (int a, int b){
         return a + b;
     }
 
-    @Override
     public int subtrai(int a, int b){
         return a - b;
     }
 
-    @Override
     public String digaOlaPara(String nome){
         return "Olá, " + nome + "!";
     }
@@ -34,6 +30,7 @@ public class Server implements Hello {
             Server obj = new Server();
             Hello stub = (Hello) UnicastRemoteObject.exportObject(obj, 0);
 
+            // Bind the remote object's stub in the registry
             Registry registry = LocateRegistry.getRegistry();
             registry.rebind("Hello", stub);
 
